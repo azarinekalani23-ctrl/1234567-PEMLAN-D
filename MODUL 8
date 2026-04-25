@@ -15,12 +15,10 @@ class Invoice implements Payable {
         this.pricePerItem = pricePerItem;
     }
 
-    @Override
     public int getPayableAmount() {
         return quantity * pricePerItem;
     }
 
-    @Override
     public String toString() {
         return String.format("%-15s | %d x %-7d = Rp %d", 
             productName, quantity, pricePerItem, getPayableAmount());
@@ -41,7 +39,6 @@ class Employee implements Payable {
         this.invoices = invoices;
     }
 
-    @Override
     public int getPayableAmount() {
         int totalHutang = 0;
         for (Invoice inv : invoices) {
